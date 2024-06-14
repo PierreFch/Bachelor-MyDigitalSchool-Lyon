@@ -1,0 +1,1076 @@
+// Variables
+// -- Couleurs --
+$primary: #15375b;
+$secondary: #c5cfd9;
+$background: #e5e7eb;
+$accent: #d0001d;
+$bgLightGrey: #EBEBEB;
+
+$danger: #d00000;
+
+$successBg: #d4edda;
+$success: #155724;
+
+$errorBg: #F8D7DA;
+$error: #721C24;
+
+$link: #0077b6;
+
+// -- Fonts --
+$fontTitle:  'Satoshi', sans-serif;
+$fontText : 'Poppins', sans-serif;
+
+$radius : 5px;
+
+// -- Breakpoints --
+$breakPointMenu: 900;
+
+// Mixins
+@mixin support($color: #FFF, $secondColor: $primary){
+    padding: .5rem;
+    border-radius: $radius;
+    color: $color;
+    border: 1px solid $color;
+    transition-duration: 200ms;
+    cursor: pointer;
+    &:hover{
+        opacity: 1;
+        background-color: $color;
+        color: $secondColor ;
+    }
+}
+
+@mixin line($width: 40){
+    position: relative;
+    padding: 0 1.5rem;
+    text-align: center;
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        background-color: $primary;
+        height: 1px;
+        width: $width+%;
+        top: 45%;
+    }
+    &::before{
+        left: 0;
+    }
+    &::after{
+        right: 0;
+    }
+}
+
+@mixin alert($bg: $successBg, $color:$success){
+    display: inline-block;
+    background-color: $bg;
+    color: $color;
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+    margin: 2rem 0;
+}
+
+@mixin breakPoint($max-width: 0, $min-width: 0){
+    @if $max-width > 0 and $min-width <= 0 {
+        @media only screen and(max-width: $max-width + "px"){ @content;
+}
+    }
+    @else if $max-width <= 0 and $min-width > 0 {
+        @media only screen and(min-width: $min-width + "px"){ @content;
+}
+    }
+    @else if $max-width > 0 and $min-width > 0 {
+        @media only screen and(min-width: $min-width + "px")
+and(max-width: $max-width + "px"){ @content; }
+    }
+}
+
+// Placeholders
+%bgWhite{
+    background-color: #FFF;
+    padding: 2rem;
+    border-radius: $radius;
+}
+
+%list{
+    div.list{
+        margin: 2rem 0;
+        .card{
+            width: calc(48% - 40px);
+            display: inline-block;
+            vertical-align: top;
+            background-color: $primary;
+            color: #FFF;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: $radius;
+            position: relative;
+            transition-duration: 250ms;
+            &:nth-of-type(2n){
+                float: right;
+            }
+            h3{
+                color: #FFF;
+            }
+            a.showmore{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            &:hover{
+                transform: translateY(-5px);
+                box-shadow: 0 10px 5px 0 rgba($primary, .2);
+            }
+            .description{
+                font-size: .9rem;
+            }
+            @include breakPoint(900){
+                width: 100%;
+                margin: 1.5rem 0;
+            }
+        }
+        .add{
+            margin: 1rem 0;
+        }
+    }
+}
+
+// Bootstrap
+.text-left{
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.light{
+    opacity: .8;
+}
+
+.success{
+    @include alert();
+}
+
+.invalid, .error{
+    @include alert($errorBg, $error);
+}
+
+.invalid{
+    margin: 0;
+    width: 100%;
+}
+
+.alert{
+    position: absolute;
+    left: 0;
+    text-align: right;
+    margin: auto;
+    right: 0;
+    z-index: 10;
+    @include breakPoint(700){
+        top: 75px;
+    }
+}
+
+.mce_inline_error{
+    border: 1px solid $danger !important;
+}
+
+
+// Animation
+@keyframes translate {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(30%);
+        opacity: 0;
+    }
+}
+
+// Elements communs
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: $fontText;
+    font-size: 1rem;
+    margin: 0;
+    background-color: $background;
+    *{
+        box-sizing: border-box;
+    }
+}
+
+img, a{
+    transition-duration: 200ms;
+}
+
+img{max-width: 100%;}
+
+a{
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+p a{
+    vertical-align: unset;
+    color: $link;
+    &:hover{
+        opacity: .8;
+    }
+}
+
+.button{
+    @include support();
+    &.blue{
+        @include support($primary, #FFF);
+    }
+    &.danger{
+        @include support($danger, #FFF);
+    }
+}
+
+div.container{
+    max-width: 1380px;
+    width: 100%;
+    padding: 0 1rem;
+    margin: auto;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: bold;
+    @include breakPoint($breakPointMenu){
+        font-size: 2.5rem;
+    }
+}
+
+h2{
+    font-size: 1.8rem;
+    @include breakPoint($breakPointMenu){
+        font-size: 1.5rem;
+    }
+}
+
+h2, h3, h4{
+    font-weight: 600;
+}
+
+h1, h2, h3, h4{
+    color: $primary;
+}
+
+table{
+    width: 100%;
+    border-spacing:0;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    th{
+        text-align: left;
+    }
+    th, td{
+        padding: 1rem .5rem;
+    }
+    tbody{
+        tr:nth-of-type(2n+1){
+            background-color: $bgLightGrey;
+        }
+        td{
+            &:hover{
+                background-color: rgba(#000, .1);
+            }
+            input{width: auto}
+        }
+    }
+    tr{
+        position: relative;
+        .showmore{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            padding: 0;
+            a{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .delete, .edit{
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+section{
+    padding: 2rem 0;
+}
+
+div.left, div.right{
+    width: calc(50% - 40px);
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.divPage{
+    min-height: 70vh;
+    pre{
+        font-family: unset;
+        white-space: pre-wrap;
+    }
+}
+
+div.actions{
+    margin: 1rem 0;
+    > div{
+        display: inline-block;
+        vertical-align: middle;
+        &:nth-of-type(1){
+            margin-right: 1rem;
+        }
+    }
+}
+
+header{
+    background-color: $primary;
+    .banner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+        padding: .75rem 0;
+        .logo img{
+            width: 200px;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            li{
+                list-style: none;
+                text-align: center;
+                a{
+                    color: #FFF;
+                    &:hover{
+                        opacity: .8;
+                    }
+                }
+                &.support{
+                    padding-left: 2rem;
+                    border-left: 1px solid rgba(#FFF, .5);
+                    @include breakPoint($breakPointMenu){
+                        border-left: 0;
+                        padding-left: 0;
+                    }
+                }
+            }
+            @include breakPoint($breakPointMenu){
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2rem 1rem;
+            }
+        }
+        .burger-menu{
+            display: none;
+        }
+        @include breakPoint(9999, $breakPointMenu){
+            nav#menu{
+                display: block !important;
+            }
+        }
+        @include breakPoint($breakPointMenu){
+            .burger-menu{
+                width: 40px;
+                height: 22px;
+                position: absolute;
+                top: 35px;
+                right: 0;
+                z-index: 2;
+                display: block;
+                #toggler{
+                    cursor: pointer;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    opacity: 0; 
+                    -webkit-touch-callout: none;
+                }
+                label{
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    span{
+                        display: block;
+                        height: 2px;
+                        background-color: #FFF;
+                        border-radius: 50px;
+                        transition: transform 250ms cubic-bezier(.17,.67,.83,.67);
+                        &:nth-of-type(1){
+                            width: 40px;
+                        }
+                        &:nth-of-type(2){
+                            width: 20px;
+                        }
+                        &:nth-of-type(3){
+                            width: 30px;
+                        }
+                    }
+                    &.show{
+                        span{
+                            top: 10px;
+                            position: absolute;
+                            &:nth-of-type(1){
+                                transform: rotate(-45deg);
+                            }
+                            &:nth-of-type(2){
+                                display: none;
+                            }
+                            &:nth-of-type(3){
+                                transform: rotate(45deg);
+                                width: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+            nav#menu{
+                display: none;
+                width: 100%;
+                overflow: hidden;
+                ul{
+                    gap: unset;
+                    li{
+                            width: 100%;
+                        a{
+                        width: 100%;
+                        padding: 1.5rem 1rem;
+                        }
+                        &:not(.support){
+                            text-align: left;
+                            &:hover{
+                                background-color: rgba(#FFF, .1);
+                            }
+                        }
+                        &.support{
+                            width: 100%;
+                            margin-top: 1rem;
+                            a{
+                                padding: 1.5rem 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer{
+    background-color: $primary;
+    padding: 2rem 0;
+    color: #FFF;
+    margin-top: 3rem;
+    a{color: #FFF;}
+    div.top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(#FFF, .5);
+        .logo img{
+            width: 250px;
+        }
+        div.social{
+            padding: 1rem 0;
+            img{
+                width: 25px;
+                vertical-align: middle;
+            }
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-left: 0;
+            li{
+                list-style: none;
+                margin: 0 1rem;
+                a{
+                    &:nth-last-of-type(1){
+                        margin-right: 0;
+                    }
+                    &:hover{
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+        nav{
+            ul{
+                @include breakPoint(1000){
+                    flex-direction: column;
+                    align-items: flex-end;
+                    li{
+                        margin: .5rem 0;
+                    }
+                }
+            }
+        }
+        @include breakPoint(600){
+            justify-content: center;
+            nav{
+                width: 100%;
+                ul{
+                    padding-left: 0;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    div.bottom{
+        a{
+            opacity: .5;
+            margin: 1rem 0;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+form{
+    h2{
+        margin-bottom: 0;
+    }
+    input, textarea{
+        font-size: 1rem;
+        font-family: $fontText;
+        background: none;
+        border:  1px solid $primary;
+        border-radius: $radius;
+        outline: 0;
+        width: 100%;
+        padding: .6rem;
+        &[type = "submit"]{
+            width: auto;
+            @include support($primary, #FFF);
+        }
+    }
+    div.input-field{
+        position: relative;
+        box-sizing: border-box;
+        padding-top: 28px;
+        margin: 10px 0;
+        width: 45%;
+        display: inline-block;
+        vertical-align: top;
+        &:nth-of-type(2n){
+            float: right;
+        }
+        label {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: .9rem;
+            font-weight: 300;
+            transition: all 0.2s ease;
+            padding: .3rem;
+            background-color: $background;
+            cursor: text;
+            font-weight: 300;
+            color: $primary;
+            transition-duration: 200ms;
+            &.select{
+                font-size: .8rem;
+            }
+        }
+        @include breakPoint(600){
+            width: 100%;
+        }
+    }
+    div.rgpd{
+        p{
+            font-size: .8rem;
+            font-style: italic;
+        }
+    }
+    div.submit{
+        margin: 2rem 0;
+        @include breakPoint(600){
+            margin-top: 4rem;
+        }
+    }
+}
+
+// Pages
+div.divPage.divWelcome{
+    section.presentation{
+        background-color: rgba($primary, .9);
+        color: #FFF;
+        position: relative;
+        h1{
+            margin-top: .5rem;
+            color: #FFF;
+        }
+        h2{
+            color: #FFF;
+            font-size: 2.1rem;
+            line-height: 1.3;
+        }
+        .support{
+            a{
+                color: #FFF;
+                span{
+                    display: block;
+                    transition-duration: 200ms;
+                }
+                &:hover{
+                    span{
+                       transform: translateY(.5rem);
+                    }
+                }
+            }
+            div.bottom{
+                margin-top: 4rem;
+                padding-top: 1.5rem;
+                text-align: center;
+                svg{
+                    max-width: 50px;
+                    display: block;
+                    margin: .5rem auto;
+                    line{
+                        animation: 950ms translate infinite;
+                    }
+                }
+            }
+        }
+        .right{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            img{
+                max-width: 500px;
+            }
+        }
+        @include breakPoint(1100){
+            div.left{
+                width: calc(60% - 40px);
+            }
+            div.right{
+                img{
+                    max-width: 400px;
+                }
+            }
+         }
+        @include breakPoint($breakPointMenu){
+           div.left{
+               width: 100%;
+           }
+           div.right{
+            display: none
+           }
+        }
+    }
+    section.values{
+        h2{
+            @include line();
+            @include breakPoint(1100){
+                &::before, &::after{
+                    width: 30%;
+                }
+            }
+            @include breakPoint(500){
+                &::before, &::after{
+                    width: 25%;
+                }
+            }
+        }
+        .list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            div.card{
+                background-color: $primary;
+                color: #FFF;
+                margin: 1rem 2rem;
+                padding: 1rem;
+                height: 300px;
+                width: 300px;
+                position: relative;
+                h3{
+                    font-size: 1.5rem;
+                    color: #FFF;
+                }
+                &::after{
+                    position: absolute;
+                    bottom: -30px;
+                    right: 0;
+                    opacity: .1;
+                    font-size: 5rem;
+                    font-weight: 600;
+                }
+                &:nth-of-type(1){
+                    &::after{content: '#1';}
+                }
+                &:nth-of-type(2){
+                    &::after{content: '#2';}
+                }
+                &:nth-of-type(3){
+                    &::after{content: '#3';}
+                }
+            }
+        }
+    }
+    section.pitch{
+        h2{
+            @include line(30);
+            @include breakPoint(1100){
+                &::before, &::after{
+                    width: 20%;
+                }
+            }
+            @include breakPoint(560){
+                &::before, &::after{
+                    width: 10%;
+                }
+            }
+            @include breakPoint(450){
+                &::before, &::after{
+                    width: 5%;
+                }
+            }
+        }
+        div.description{
+            @extend %bgWhite;
+            margin: 2rem 4rem;
+            img{
+                max-width: 300px;
+            }
+            @include breakPoint(600){
+                margin: 2rem 0;
+            }
+        }
+    }
+    section.support{
+        h2{
+            color: #FFF;
+        }
+        div.picture{
+            width: 350px;
+            height: 350px;
+            background: linear-gradient($primary, #1E5085);
+            border-radius: $radius;
+            position: absolute;
+            left: -35%;
+            top: 10%;
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            .overlay{
+                background-color: $primary;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+            @include breakPoint(1300, 1100){
+                left: -40%;
+            }
+            @include breakPoint(1100){
+                width: 250px;
+                height: 250px;
+            }
+            @include breakPoint(950){
+                top: auto;
+                left: auto;
+                margin: auto;
+                position: relative;
+            }
+        }
+        div.support-form{
+            background-color: $primary;
+            color: #FFF;
+            padding: 1rem;
+            padding-left: 5rem;
+            border-radius: $radius;
+            width: 65%;
+            margin-left: auto;
+            position: relative;
+            @include breakPoint(950){
+                width: 100%;
+                padding: 1rem 2rem;
+            }
+            p.light{
+                margin-bottom: 0;
+            }
+            div#countdown{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-bottom: 1rem;
+                > div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin: 0 2rem;
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                    span{
+                        font-weight: initial;
+                        font-size: initial;
+                        opacity: .8;
+                    }
+                }
+                @include breakPoint(950){
+                    margin: 1rem 0;
+                }
+            }
+            .alert{
+                position: unset;
+                .success{
+                    margin: 0;
+                }
+            }
+            form{
+                padding: 1rem 0;
+                margin-right: 5rem;
+                div.input-field{
+                    opacity: .8;
+                }
+                input{
+                    border: 1px solid #FFF;
+                    color: #FFF;
+                }
+                label{
+                    color: #FFF;
+                    background-color: $primary;
+                }
+                div.rgpd{
+                    margin: 1rem 0;
+                    input{
+                        width: auto;
+                        display: inline-block;
+                        vertical-align: middle;
+                        border: 1px solid #FFF;
+                        background-color: transparent;
+                        height: 15px;
+                        width: 15px;
+                        margin: 0;
+                    }
+                }
+                div.submit{
+                    input{
+                        @include support();
+                    }
+                }
+                @include breakPoint(950){
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    section.actualites{
+        h2{
+            @include line(30);
+            @include breakPoint(1100){
+                &::before, &::after{
+                    width: 20%;
+                }
+            }
+            @include breakPoint(560){
+                &::before, &::after{
+                    width: 10%;
+                }
+            }
+            @include breakPoint(450){
+                &::before, &::after{
+                    width: 5%;
+                }
+            }
+        }
+        @extend %list;
+        div.card{
+            div.description p{
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+}
+
+div.divPage.divProgramme{
+    section.list{
+        @extend %bgWhite;
+        h2{
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        h3{
+            margin: 0;
+            position: relative;
+            padding-left: 2rem;
+            &::before{
+                content: counter(promise);
+                counter-increment: promise;
+                position: absolute;
+                top: -30%;
+                left: 0;
+                width: 50px;
+                height: 50px;
+                color: $primary;
+                font-weight: bold;
+                font-size: 2rem;
+                @include breakPoint(600){
+                    top: 0;
+                }
+            }
+        }
+        div.content{
+            counter-reset: promise;
+            div.promise{
+                padding: 1rem 0;
+                p{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        div.bottom{
+            margin: 3rem 0;
+        }
+    }
+}
+
+div.divPage.divActions{
+    section.list{
+        @extend %bgWhite;
+        div.card{
+            margin: 1rem;
+            width: calc(50% - 40px);
+            display: inline-block;
+            vertical-align: top;
+            &:nth-of-type(2n){
+                margin-left: 1.5rem;
+            }
+            h3{
+            color: #FFF;
+            background-color: $primary;
+            padding: 1rem;
+            border-radius: $radius;
+           }
+           @include breakPoint(800){
+            width: 100%;
+            margin: 1rem 0;
+            &:nth-of-type(2n){
+                margin-left: 0
+            }
+        }
+        }
+    }
+}
+
+div.divPage.divActualites{
+    @extend %list;
+    &.create, &.edit{
+        form{
+            div.input-field{
+                width: 100%;
+                &:nth-of-type(2n){
+                    float: unset;
+                }
+            }
+            textarea{
+                &#short-description{
+                    min-height: 100px;
+                }
+                &#description{
+                    min-height: 500px;
+                }
+            }
+        }
+    }
+    &.show{
+        div.picture{
+            margin: 1rem 0;
+        }
+        h1{
+            margin-top: 5rem;
+        }
+        div.chapo{
+            margin: 3rem 0;
+        }
+        div.description{
+            background-color: #FFF;
+            border-radius: $radius;
+            padding: 2rem;
+            p{
+                white-space: pre-line;
+            }
+        }
+        section{
+            padding: 1rem 0;
+        }
+    }
+    div.card{
+        div.description p{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+div.divPage.divActualites-section{
+    form{
+        div.input-field{
+            width: 100%;
+            &:nth-of-type(2n){
+                float: unset;
+            }
+        }
+    }
+}
+
+div.divMentions-legales, div.divPolitique-confidentialite, div.divDonnees-personnelles{
+    div.description{
+        padding: 2rem;
+        background-color: #FFF;
+        border-radius: $radius;
+    }
+}

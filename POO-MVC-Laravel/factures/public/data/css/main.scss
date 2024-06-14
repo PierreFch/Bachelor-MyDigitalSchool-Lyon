@@ -1,0 +1,500 @@
+// Variables
+$black: #383D41;
+$primary: #010409;
+$submit: #724e91;
+$lightSubmit: #7F5F9B;
+$information: #e54f6d;
+$shadow: #EBEBEB;
+$bgLight: #F5F5F5;
+$bgLightGrey: #EBEBEB;
+$grey: #E2E3E5;
+$blue: #007bff;
+
+$successBg: #d4edda;
+$success: #155724;
+
+$errorBg: #F8D7DA;
+$error: #721C24;
+
+$danger: #CC0000;
+
+$font: 'Nunito', sans-serif;
+
+// Mixin
+@mixin button($color: $submit, $secondColor: #FFF){
+    border: 0;
+    background-color: $color;
+    color: $secondColor;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: .5rem 0;
+}
+@mixin alert($bg: $successBg ,$color:$success){
+    display: inline-block;
+    background-color: $bg;
+    color: $color;
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+}
+
+// Bootstrap
+.text-left{
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+.text-italic{
+    font-style: italic;
+}
+
+.little{
+    display: block;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: rgba(#000, .5);
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.accent{
+    color: $information;
+}
+
+.success{
+    @include alert();
+}
+
+.invalid, .error{
+    @include alert($errorBg, $error);
+}
+
+.empty{
+    color: $black;
+    background-color: $grey;
+    padding: 1rem;
+    margin: 1rem 2rem;
+    div.add{
+        margin: .5rem 0 !important;
+    }
+    div.picture{
+        margin-top: .5rem;
+    }
+}
+
+// Elements communs
+body {
+    margin: 0;
+    font-family: $font;
+    font-size: 1rem;
+    background-color: $bgLight;
+    *{box-sizing: border-box;}
+}
+
+div.container {
+    max-width: 1380px;
+    padding: 0 20px;
+    margin: auto;
+    width: 100%;
+}
+
+div.left, div.right {
+    width: calc(50% - 40px);
+    display: inline-block;
+    vertical-align: top;
+}
+
+a, img, input[type = "submit"] {
+    transition-duration: 200ms;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+
+    &.login {
+        @include button($primary);
+    }
+    &.back{
+        color: $submit;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        img{
+            max-width: 30px;
+            margin-right: 10px;
+        }
+        &:hover{
+            img{
+                transform: translateX(-5px);
+            }
+        }
+    }
+}
+
+img{
+    max-width: 100%;
+    &#options, &.line-options{
+        height: 20px;
+        cursor: pointer;
+        transition-duration: 300ms;
+        &.active{
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.button{
+    @include button($submit);
+    &:hover{
+        background-color: $lightSubmit;
+    }
+    &.pink{
+        background-color: $information;
+        &-border{
+            background-color: transparent;
+            color: $information;
+            border: 1.5px solid $information;
+        }
+    }
+    &.danger{
+        background-color: $danger;
+    }
+    &.blue{
+        background-color: $blue;
+    }
+}
+
+form {
+    > div, div.top > div, div.bottom > div{
+        margin: .5rem 0;
+    }
+    &:not(.account), &.account div.top{
+        > div{
+            &.text, &.email, &.phone{
+                width: calc(50% - 20px);
+                display: inline-block;
+            }
+            &:nth-of-type(2n){
+                float: right;
+                margin-left: .5rem;
+            }
+        }
+    }
+    input, textarea {
+        font-family: $font;
+        font-size: 1rem;
+        padding: 8px 10px;
+        width: 100%;
+        margin: 5px 0;
+    }
+    a.submit, input[type = "submit"]{
+        border: 0;
+        background-color: $submit;
+        color: #FFF;
+        padding: 10px 20px;
+        cursor: pointer;
+        &:hover{
+            opacity: .9;
+        }
+    }
+    div.bottom{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    div.invalid{
+        width: 100%;
+    }
+}
+
+// divPage
+div.divPage{
+    &.show{
+        h1{
+            display: inline-block;
+            margin-right: .5rem;
+        }
+        div#actions{
+            display: none;
+            align-items: center;
+            flex-wrap: wrap;
+            .edit{
+                margin-right: 1rem;
+            }
+            &.active{
+                display: flex;
+            }
+        }
+        div.bottom{
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            a{
+                margin-right: 1rem;
+            }
+        }
+        div.list{
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid rgba(#000, .1);
+            h2, table{
+                margin: 0;
+            }
+            div.add{
+                margin: 1rem 0;
+            }
+        }
+        div.data{
+            > div, div.left > div, div.right > div{
+                margin: .5rem 0;
+            }
+        }
+    }
+}
+
+table{
+    width: 100%;
+    border-spacing:0;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    th{
+        text-align: left;
+    }
+    th, td{
+        padding: 1rem .5rem;
+    }
+    tbody{
+        tr:nth-of-type(2n+1){
+            background-color: $bgLightGrey;
+        }
+        td{
+            &:hover{
+                background-color: rgba(#000, .1);
+            }
+            input{width: auto}
+        }
+    }
+    tr{
+        position: relative;
+        .showmore{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            padding: 0;
+            a{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .delete, .edit{
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+// Header
+header{
+    padding: 1rem;
+    padding-left: 2rem;
+    background-color: $bgLight;
+    margin-left: 20%; //Div left in dashboard width
+    .banner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .logout{
+            margin-left: auto;
+        }
+    }
+}
+
+// Page
+div.Page{
+    height: 100vh;
+    > div.data{
+        form input{
+            width: auto;
+        }
+    }
+    > div.left{
+        width: 20%;
+        height: 100%;
+        box-shadow: 7px 0 5px 0 $shadow;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 1rem;
+        color: #FFF;
+        background-color: $submit;
+        nav{
+            height: 100%;
+            padding: 1rem 0;
+            ul{
+                padding-left: 0;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                div.top, div.bottom{
+                    width: 100%;
+                }
+                div.bottom{
+                    align-self: end;
+                }
+                li{
+                    list-style: none;
+                    a{
+                        padding: 1.25rem 1.5rem;
+                        color: #FFF;
+                        width: 100%;
+                        display: inline-flex;
+                        align-items: center;
+                        &:hover{
+                            background-color: $lightSubmit;
+                        }
+                        img{
+                            margin-right: 10px;
+                            width: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    > div.right{
+        margin-left: 20%; //Div left width
+        width: 80%;
+        section{
+            margin: 2rem 0;
+        }
+    }
+}
+
+// Accueil
+div.divWelcome {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Dashboard
+div.divDashboard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    h1{
+        text-align: center;
+        font-size: 3rem;
+    }
+}
+
+// Compte
+div.divAccount{
+    div.columns{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 1rem;
+        grid-row-gap: 0px;
+        div.left { grid-area: 1 / 1 / 2 / 2; }
+        div.middle { grid-area: 1 / 2 / 2 / 3; }
+        div.right { grid-area: 1 / 3 / 2 / 4; }
+        > div{
+            width: 100%;
+            padding: 0 .5rem;
+            > div{padding: .40rem 0}
+        }
+    }
+    div.bottom{
+        margin-top: 2rem;
+        form input{
+            width: auto;
+            margin: .5rem 0;
+        }
+    }
+}
+
+// Missions
+div.divMissions{
+    form{
+        div.text, div.email, div.phone{
+            width: 100%;
+        }
+        div:nth-of-type(2n){
+            margin-left: 0;
+            float: none;
+        }
+    }
+    &.show{
+        td:hover{
+            background-color: transparent;
+        }
+    }
+}
+
+// Modal Box
+#modalBox {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    .content {
+        background-color: #fefefe;
+        margin: 15% auto; 
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; 
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        &:hover, &:focus{
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+    div.choice{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #no{
+            @include button($blue);
+        }
+        #yes{
+            margin-left: 1rem;
+        }
+    }
+}
+

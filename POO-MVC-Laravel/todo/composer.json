@@ -1,0 +1,21 @@
+{
+    "name": "pierre/todo",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Todo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "PierreFch",
+            "email": "pierrelefaucheur252@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^6.0"
+    },
+    "require": {
+        "nunomaduro/termwind": "^1.4"
+    }
+}

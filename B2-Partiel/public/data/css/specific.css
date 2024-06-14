@@ -1,0 +1,1220 @@
+div.divPage.divWelcome section.pitch div.description, div.divPage.divProgramme section.list, div.divPage.divActions section.list {
+  background-color: #FFF;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+div.divPage.divWelcome section.actualites div.list, div.divPage.divActualites div.list {
+  margin: 2rem 0;
+}
+
+div.divPage.divWelcome section.actualites div.list .card, div.divPage.divActualites div.list .card {
+  width: calc(48% - 40px);
+  display: inline-block;
+  vertical-align: top;
+  background-color: #15375b;
+  color: #FFF;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  position: relative;
+  transition-duration: 250ms;
+}
+
+div.divPage.divWelcome section.actualites div.list .card:nth-of-type(2n), div.divPage.divActualites div.list .card:nth-of-type(2n) {
+  float: right;
+}
+
+div.divPage.divWelcome section.actualites div.list .card h3, div.divPage.divActualites div.list .card h3 {
+  color: #FFF;
+}
+
+div.divPage.divWelcome section.actualites div.list .card a.showmore, div.divPage.divActualites div.list .card a.showmore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+div.divPage.divWelcome section.actualites div.list .card:hover, div.divPage.divActualites div.list .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 5px 0 rgba(21, 55, 91, 0.2);
+}
+
+div.divPage.divWelcome section.actualites div.list .card .description, div.divPage.divActualites div.list .card .description {
+  font-size: .9rem;
+}
+
+@media only screen and (max-width: 900px) {
+  div.divPage.divWelcome section.actualites div.list .card, div.divPage.divActualites div.list .card {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+}
+
+div.divPage.divWelcome section.actualites div.list .add, div.divPage.divActualites div.list .add {
+  margin: 1rem 0;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.light {
+  opacity: .8;
+}
+
+.success {
+  display: inline-block;
+  background-color: #d4edda;
+  color: #155724;
+  padding: .75rem 1.25rem;
+  border-radius: .25rem;
+  margin: 2rem 0;
+}
+
+.invalid, .error {
+  display: inline-block;
+  background-color: #F8D7DA;
+  color: #721C24;
+  padding: .75rem 1.25rem;
+  border-radius: .25rem;
+  margin: 2rem 0;
+}
+
+.invalid {
+  margin: 0;
+  width: 100%;
+}
+
+.alert {
+  position: absolute;
+  left: 0;
+  text-align: right;
+  margin: auto;
+  right: 0;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 700px) {
+  .alert {
+    top: 75px;
+  }
+}
+
+.mce_inline_error {
+  border: 1px solid #d00000 !important;
+}
+
+@keyframes translate {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  background-color: #e5e7eb;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+img, a {
+  transition-duration: 200ms;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+p a {
+  vertical-align: unset;
+  color: #0077b6;
+}
+
+p a:hover {
+  opacity: .8;
+}
+
+.button {
+  padding: .5rem;
+  border-radius: 5px;
+  color: #FFF;
+  border: 1px solid #FFF;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 1;
+  background-color: #FFF;
+  color: #15375b;
+}
+
+.button.blue {
+  padding: .5rem;
+  border-radius: 5px;
+  color: #15375b;
+  border: 1px solid #15375b;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+.button.blue:hover {
+  opacity: 1;
+  background-color: #15375b;
+  color: #FFF;
+}
+
+.button.danger {
+  padding: .5rem;
+  border-radius: 5px;
+  color: #d00000;
+  border: 1px solid #d00000;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+.button.danger:hover {
+  opacity: 1;
+  background-color: #d00000;
+  color: #FFF;
+}
+
+div.container {
+  max-width: 1380px;
+  width: 100%;
+  padding: 0 1rem;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+@media only screen and (max-width: 900px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+h2, h3, h4 {
+  font-weight: 600;
+}
+
+h1, h2, h3, h4 {
+  color: #15375b;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+table th {
+  text-align: left;
+}
+
+table th, table td {
+  padding: 1rem .5rem;
+}
+
+table tbody tr:nth-of-type(2n+1) {
+  background-color: #EBEBEB;
+}
+
+table tbody td:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+table tbody td input {
+  width: auto;
+}
+
+table tr {
+  position: relative;
+}
+
+table tr .showmore {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0;
+}
+
+table tr .showmore a {
+  width: 100%;
+  height: 100%;
+}
+
+table tr .delete, table tr .edit {
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+div.left, div.right {
+  width: calc(50% - 40px);
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.divPage {
+  min-height: 70vh;
+}
+
+div.divPage pre {
+  font-family: unset;
+  white-space: pre-wrap;
+}
+
+div.actions {
+  margin: 1rem 0;
+}
+
+div.actions > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.actions > div:nth-of-type(1) {
+  margin-right: 1rem;
+}
+
+header {
+  background-color: #15375b;
+}
+
+header .banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  padding: .75rem 0;
+}
+
+header .banner .logo img {
+  width: 200px;
+}
+
+header .banner ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+header .banner ul li {
+  list-style: none;
+  text-align: center;
+}
+
+header .banner ul li a {
+  color: #FFF;
+}
+
+header .banner ul li a:hover {
+  opacity: .8;
+}
+
+header .banner ul li.support {
+  padding-left: 2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@media only screen and (max-width: 900px) {
+  header .banner ul li.support {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  header .banner ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+  }
+}
+
+header .banner .burger-menu {
+  display: none;
+}
+
+@media only screen and (min-width: 900px) and (max-width: 9999px) {
+  header .banner nav#menu {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  header .banner .burger-menu {
+    width: 40px;
+    height: 22px;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    z-index: 2;
+    display: block;
+  }
+  header .banner .burger-menu #toggler {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    -webkit-touch-callout: none;
+  }
+  header .banner .burger-menu label {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  header .banner .burger-menu label span {
+    display: block;
+    height: 2px;
+    background-color: #FFF;
+    border-radius: 50px;
+    transition: transform 250ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  }
+  header .banner .burger-menu label span:nth-of-type(1) {
+    width: 40px;
+  }
+  header .banner .burger-menu label span:nth-of-type(2) {
+    width: 20px;
+  }
+  header .banner .burger-menu label span:nth-of-type(3) {
+    width: 30px;
+  }
+  header .banner .burger-menu label.show span {
+    top: 10px;
+    position: absolute;
+  }
+  header .banner .burger-menu label.show span:nth-of-type(1) {
+    transform: rotate(-45deg);
+  }
+  header .banner .burger-menu label.show span:nth-of-type(2) {
+    display: none;
+  }
+  header .banner .burger-menu label.show span:nth-of-type(3) {
+    transform: rotate(45deg);
+    width: 40px;
+  }
+  header .banner nav#menu {
+    display: none;
+    width: 100%;
+    overflow: hidden;
+  }
+  header .banner nav#menu ul {
+    gap: unset;
+  }
+  header .banner nav#menu ul li {
+    width: 100%;
+  }
+  header .banner nav#menu ul li a {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+  header .banner nav#menu ul li:not(.support) {
+    text-align: left;
+  }
+  header .banner nav#menu ul li:not(.support):hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  header .banner nav#menu ul li.support {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  header .banner nav#menu ul li.support a {
+    padding: 1.5rem 1rem;
+  }
+}
+
+footer {
+  background-color: #15375b;
+  padding: 2rem 0;
+  color: #FFF;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #FFF;
+}
+
+footer div.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+footer div.top .logo img {
+  width: 250px;
+}
+
+footer div.top div.social {
+  padding: 1rem 0;
+}
+
+footer div.top div.social img {
+  width: 25px;
+  vertical-align: middle;
+}
+
+footer div.top ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+footer div.top ul li {
+  list-style: none;
+  margin: 0 1rem;
+}
+
+footer div.top ul li a:nth-last-of-type(1) {
+  margin-right: 0;
+}
+
+footer div.top ul li a:hover {
+  opacity: .8;
+}
+
+@media only screen and (max-width: 1000px) {
+  footer div.top nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  footer div.top nav ul li {
+    margin: .5rem 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  footer div.top {
+    justify-content: center;
+  }
+  footer div.top nav {
+    width: 100%;
+  }
+  footer div.top nav ul {
+    padding-left: 0;
+    align-items: center;
+  }
+}
+
+footer div.bottom a {
+  opacity: .5;
+  margin: 1rem 0;
+}
+
+footer div.bottom a:hover {
+  opacity: 1;
+}
+
+form h2 {
+  margin-bottom: 0;
+}
+
+form input, form textarea {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  background: none;
+  border: 1px solid #15375b;
+  border-radius: 5px;
+  outline: 0;
+  width: 100%;
+  padding: .6rem;
+}
+
+form input[type="submit"], form textarea[type="submit"] {
+  width: auto;
+  padding: .5rem;
+  border-radius: 5px;
+  color: #15375b;
+  border: 1px solid #15375b;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover, form textarea[type="submit"]:hover {
+  opacity: 1;
+  background-color: #15375b;
+  color: #FFF;
+}
+
+form div.input-field {
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 28px;
+  margin: 10px 0;
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+form div.input-field:nth-of-type(2n) {
+  float: right;
+}
+
+form div.input-field label {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: .9rem;
+  font-weight: 300;
+  transition: all 0.2s ease;
+  padding: .3rem;
+  background-color: #e5e7eb;
+  cursor: text;
+  font-weight: 300;
+  color: #15375b;
+  transition-duration: 200ms;
+}
+
+form div.input-field label.select {
+  font-size: .8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  form div.input-field {
+    width: 100%;
+  }
+}
+
+form div.rgpd p {
+  font-size: .8rem;
+  font-style: italic;
+}
+
+form div.submit {
+  margin: 2rem 0;
+}
+
+@media only screen and (max-width: 600px) {
+  form div.submit {
+    margin-top: 4rem;
+  }
+}
+
+div.divPage.divWelcome section.presentation {
+  background-color: rgba(21, 55, 91, 0.9);
+  color: #FFF;
+  position: relative;
+}
+
+div.divPage.divWelcome section.presentation h1 {
+  margin-top: .5rem;
+  color: #FFF;
+}
+
+div.divPage.divWelcome section.presentation h2 {
+  color: #FFF;
+  font-size: 2.1rem;
+  line-height: 1.3;
+}
+
+div.divPage.divWelcome section.presentation .support a {
+  color: #FFF;
+}
+
+div.divPage.divWelcome section.presentation .support a span {
+  display: block;
+  transition-duration: 200ms;
+}
+
+div.divPage.divWelcome section.presentation .support a:hover span {
+  transform: translateY(0.5rem);
+}
+
+div.divPage.divWelcome section.presentation .support div.bottom {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+div.divPage.divWelcome section.presentation .support div.bottom svg {
+  max-width: 50px;
+  display: block;
+  margin: .5rem auto;
+}
+
+div.divPage.divWelcome section.presentation .support div.bottom svg line {
+  animation: 950ms translate infinite;
+}
+
+div.divPage.divWelcome section.presentation .right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+div.divPage.divWelcome section.presentation .right img {
+  max-width: 500px;
+}
+
+@media only screen and (max-width: 1100px) {
+  div.divPage.divWelcome section.presentation div.left {
+    width: calc(60% - 40px);
+  }
+  div.divPage.divWelcome section.presentation div.right img {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  div.divPage.divWelcome section.presentation div.left {
+    width: 100%;
+  }
+  div.divPage.divWelcome section.presentation div.right {
+    display: none;
+  }
+}
+
+div.divPage.divWelcome section.values h2 {
+  position: relative;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+div.divPage.divWelcome section.values h2::before, div.divPage.divWelcome section.values h2::after {
+  content: '';
+  position: absolute;
+  background-color: #15375b;
+  height: 1px;
+  width: 40%;
+  top: 45%;
+}
+
+div.divPage.divWelcome section.values h2::before {
+  left: 0;
+}
+
+div.divPage.divWelcome section.values h2::after {
+  right: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  div.divPage.divWelcome section.values h2::before, div.divPage.divWelcome section.values h2::after {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  div.divPage.divWelcome section.values h2::before, div.divPage.divWelcome section.values h2::after {
+    width: 25%;
+  }
+}
+
+div.divPage.divWelcome section.values .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+div.divPage.divWelcome section.values .list div.card {
+  background-color: #15375b;
+  color: #FFF;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+
+div.divPage.divWelcome section.values .list div.card h3 {
+  font-size: 1.5rem;
+  color: #FFF;
+}
+
+div.divPage.divWelcome section.values .list div.card::after {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  opacity: .1;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+div.divPage.divWelcome section.values .list div.card:nth-of-type(1)::after {
+  content: '#1';
+}
+
+div.divPage.divWelcome section.values .list div.card:nth-of-type(2)::after {
+  content: '#2';
+}
+
+div.divPage.divWelcome section.values .list div.card:nth-of-type(3)::after {
+  content: '#3';
+}
+
+div.divPage.divWelcome section.pitch h2 {
+  position: relative;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+div.divPage.divWelcome section.pitch h2::before, div.divPage.divWelcome section.pitch h2::after {
+  content: '';
+  position: absolute;
+  background-color: #15375b;
+  height: 1px;
+  width: 30%;
+  top: 45%;
+}
+
+div.divPage.divWelcome section.pitch h2::before {
+  left: 0;
+}
+
+div.divPage.divWelcome section.pitch h2::after {
+  right: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  div.divPage.divWelcome section.pitch h2::before, div.divPage.divWelcome section.pitch h2::after {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  div.divPage.divWelcome section.pitch h2::before, div.divPage.divWelcome section.pitch h2::after {
+    width: 10%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  div.divPage.divWelcome section.pitch h2::before, div.divPage.divWelcome section.pitch h2::after {
+    width: 5%;
+  }
+}
+
+div.divPage.divWelcome section.pitch div.description {
+  margin: 2rem 4rem;
+}
+
+div.divPage.divWelcome section.pitch div.description img {
+  max-width: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+  div.divPage.divWelcome section.pitch div.description {
+    margin: 2rem 0;
+  }
+}
+
+div.divPage.divWelcome section.support h2 {
+  color: #FFF;
+}
+
+div.divPage.divWelcome section.support div.picture {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(#15375b, #1E5085);
+  border-radius: 5px;
+  position: absolute;
+  left: -35%;
+  top: 10%;
+}
+
+div.divPage.divWelcome section.support div.picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+div.divPage.divWelcome section.support div.picture .overlay {
+  background-color: #15375b;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1300px) {
+  div.divPage.divWelcome section.support div.picture {
+    left: -40%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  div.divPage.divWelcome section.support div.picture {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  div.divPage.divWelcome section.support div.picture {
+    top: auto;
+    left: auto;
+    margin: auto;
+    position: relative;
+  }
+}
+
+div.divPage.divWelcome section.support div.support-form {
+  background-color: #15375b;
+  color: #FFF;
+  padding: 1rem;
+  padding-left: 5rem;
+  border-radius: 5px;
+  width: 65%;
+  margin-left: auto;
+  position: relative;
+}
+
+@media only screen and (max-width: 950px) {
+  div.divPage.divWelcome section.support div.support-form {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+}
+
+div.divPage.divWelcome section.support div.support-form p.light {
+  margin-bottom: 0;
+}
+
+div.divPage.divWelcome section.support div.support-form div#countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+div.divPage.divWelcome section.support div.support-form div#countdown > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+div.divPage.divWelcome section.support div.support-form div#countdown > div span {
+  font-weight: initial;
+  font-size: initial;
+  opacity: .8;
+}
+
+@media only screen and (max-width: 950px) {
+  div.divPage.divWelcome section.support div.support-form div#countdown {
+    margin: 1rem 0;
+  }
+}
+
+div.divPage.divWelcome section.support div.support-form .alert {
+  position: unset;
+}
+
+div.divPage.divWelcome section.support div.support-form .alert .success {
+  margin: 0;
+}
+
+div.divPage.divWelcome section.support div.support-form form {
+  padding: 1rem 0;
+  margin-right: 5rem;
+}
+
+div.divPage.divWelcome section.support div.support-form form div.input-field {
+  opacity: .8;
+}
+
+div.divPage.divWelcome section.support div.support-form form input {
+  border: 1px solid #FFF;
+  color: #FFF;
+}
+
+div.divPage.divWelcome section.support div.support-form form label {
+  color: #FFF;
+  background-color: #15375b;
+}
+
+div.divPage.divWelcome section.support div.support-form form div.rgpd {
+  margin: 1rem 0;
+}
+
+div.divPage.divWelcome section.support div.support-form form div.rgpd input {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #FFF;
+  background-color: transparent;
+  height: 15px;
+  width: 15px;
+  margin: 0;
+}
+
+div.divPage.divWelcome section.support div.support-form form div.submit input {
+  padding: .5rem;
+  border-radius: 5px;
+  color: #FFF;
+  border: 1px solid #FFF;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+div.divPage.divWelcome section.support div.support-form form div.submit input:hover {
+  opacity: 1;
+  background-color: #FFF;
+  color: #15375b;
+}
+
+@media only screen and (max-width: 950px) {
+  div.divPage.divWelcome section.support div.support-form form {
+    margin-right: 0;
+  }
+}
+
+div.divPage.divWelcome section.actualites h2 {
+  position: relative;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+div.divPage.divWelcome section.actualites h2::before, div.divPage.divWelcome section.actualites h2::after {
+  content: '';
+  position: absolute;
+  background-color: #15375b;
+  height: 1px;
+  width: 30%;
+  top: 45%;
+}
+
+div.divPage.divWelcome section.actualites h2::before {
+  left: 0;
+}
+
+div.divPage.divWelcome section.actualites h2::after {
+  right: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  div.divPage.divWelcome section.actualites h2::before, div.divPage.divWelcome section.actualites h2::after {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  div.divPage.divWelcome section.actualites h2::before, div.divPage.divWelcome section.actualites h2::after {
+    width: 10%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  div.divPage.divWelcome section.actualites h2::before, div.divPage.divWelcome section.actualites h2::after {
+    width: 5%;
+  }
+}
+
+div.divPage.divWelcome section.actualites div.card div.description p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+div.divPage.divProgramme section.list h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+div.divPage.divProgramme section.list h3 {
+  margin: 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+div.divPage.divProgramme section.list h3::before {
+  content: counter(promise);
+  counter-increment: promise;
+  position: absolute;
+  top: -30%;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  color: #15375b;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  div.divPage.divProgramme section.list h3::before {
+    top: 0;
+  }
+}
+
+div.divPage.divProgramme section.list div.content {
+  counter-reset: promise;
+}
+
+div.divPage.divProgramme section.list div.content div.promise {
+  padding: 1rem 0;
+}
+
+div.divPage.divProgramme section.list div.content div.promise p {
+  margin-bottom: 0;
+}
+
+div.divPage.divProgramme section.list div.bottom {
+  margin: 3rem 0;
+}
+
+div.divPage.divActions section.list div.card {
+  margin: 1rem;
+  width: calc(50% - 40px);
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.divPage.divActions section.list div.card:nth-of-type(2n) {
+  margin-left: 1.5rem;
+}
+
+div.divPage.divActions section.list div.card h3 {
+  color: #FFF;
+  background-color: #15375b;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+  div.divPage.divActions section.list div.card {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  div.divPage.divActions section.list div.card:nth-of-type(2n) {
+    margin-left: 0;
+  }
+}
+
+div.divPage.divActualites.create form div.input-field, div.divPage.divActualites.edit form div.input-field {
+  width: 100%;
+}
+
+div.divPage.divActualites.create form div.input-field:nth-of-type(2n), div.divPage.divActualites.edit form div.input-field:nth-of-type(2n) {
+  float: unset;
+}
+
+div.divPage.divActualites.create form textarea#short-description, div.divPage.divActualites.edit form textarea#short-description {
+  min-height: 100px;
+}
+
+div.divPage.divActualites.create form textarea#description, div.divPage.divActualites.edit form textarea#description {
+  min-height: 500px;
+}
+
+div.divPage.divActualites.show div.picture {
+  margin: 1rem 0;
+}
+
+div.divPage.divActualites.show h1 {
+  margin-top: 5rem;
+}
+
+div.divPage.divActualites.show div.chapo {
+  margin: 3rem 0;
+}
+
+div.divPage.divActualites.show div.description {
+  background-color: #FFF;
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+div.divPage.divActualites.show div.description p {
+  white-space: pre-line;
+}
+
+div.divPage.divActualites.show section {
+  padding: 1rem 0;
+}
+
+div.divPage.divActualites div.card div.description p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+div.divPage.divActualites-section form div.input-field {
+  width: 100%;
+}
+
+div.divPage.divActualites-section form div.input-field:nth-of-type(2n) {
+  float: unset;
+}
+
+div.divMentions-legales div.description, div.divPolitique-confidentialite div.description, div.divDonnees-personnelles div.description {
+  padding: 2rem;
+  background-color: #FFF;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=specific.css.map */
